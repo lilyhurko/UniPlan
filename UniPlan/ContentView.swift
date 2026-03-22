@@ -1,61 +1,58 @@
-//
-//  ContentView.swift
-//  UniPlan
-//
-//  Created by Лілія Гурко on 09/03/2026.
-//
-
 import SwiftUI
-import SwiftData
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
+    @StateObject private var store     = ScheduleStore()
+    @StateObject private var taskStore = TaskStore()
+    @StateObject private var examStore = ExamStore()
+    @State private var selectedTab: Tab = .today
+    @AppStorage("hasSeenOnboarding") private var hasSeenOnboarding = false
+    @State private var showOnboarding = false
+
+    enum Tab { case today, schedule, search, tasks, more }
 
     var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
-                    }
-                }
-                .onDelete(perform: deleteItems)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-            }
-        } detail: {
-            Text("Select an item")
-        }
-    }
+        TabView(selection: $selectedTab) {
+            TodayView()
+                .tabItem { Label("Dziś", systemImage: "sun.max.fill") }
+                .tag(Tab.today)
 
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
-    }
+            ScheduleView()
+                .tabItem { Label("Plan", systemImage: "calendar") }
+                .tag(Tab.schedule)
 
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
+            SearchView()
+                .tabItem { Label("Szukaj", systemImage: "magnifyingglass") }
+                .tag(Tab.search)
+
+            TasksView()
+                .tabItem { Label("Zadania", systemImage: "checkmark.circle.fill") }
+                .tag(Tab.tasks)
+
+            MoreView(importedClasses: .constant([]))
+                .tabItem { Label("Więcej", systemImage: "ellipsis.circle.fill") }
+                .tag(Tab.more)
+        }
+        .tint(.orange)
+        .environmentObject(store)
+        .environmentObject(taskStore)
+        .environmentObject(examStore)
+        .fullScreenCover(isPresented: $showOnboarding) {
+            OnboardingView(isPresented: $showOnboarding)
+                .environmentObject(store)
+        }
+        .onAppear {
+            if !hasSeenOnboarding {
+                showOnboarding = true
+                hasSeenOnboarding = true
             }
+        }
+      
+        .onChange(of: taskStore.tasks) { _, _ in
+            taskStore.savePublic()
         }
     }
 }
 
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
 }

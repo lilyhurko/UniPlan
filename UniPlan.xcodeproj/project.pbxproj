@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		683DF8A02F5EEE2A008362EE /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 683DF89F2F5EEE22008362EE /* README.md */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		683DF8832F5EE42B008362EE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,7 +31,25 @@
 		683DF8732F5EE42A008362EE /* UniPlan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UniPlan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		683DF8822F5EE42B008362EE /* UniPlanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UniPlanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		683DF88C2F5EE42B008362EE /* UniPlanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UniPlanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		683DF89F2F5EEE22008362EE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		6887209A2F70480300BAFC84 /* Exceptions for "Components" folder in "UniPlan" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Components.swift,
+			);
+			target = 683DF8722F5EE42A008362EE /* UniPlan */;
+		};
+		6887209B2F70480300BAFC84 /* Exceptions for "Components" folder in "UniPlanUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Components.swift,
+			);
+			target = 683DF88B2F5EE42B008362EE /* UniPlanUITests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		683DF8752F5EE42A008362EE /* UniPlan */ = {
@@ -43,6 +65,30 @@
 		683DF88F2F5EE42B008362EE /* UniPlanUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = UniPlanUITests;
+			sourceTree = "<group>";
+		};
+		688720962F70480300BAFC84 /* Components */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				6887209A2F70480300BAFC84 /* Exceptions for "Components" folder in "UniPlan" target */,
+				6887209B2F70480300BAFC84 /* Exceptions for "Components" folder in "UniPlanUITests" target */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		6887209E2F70480600BAFC84 /* Models */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Models;
+			sourceTree = "<group>";
+		};
+		688720A72F70480900BAFC84 /* Views */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		688720B02F70480D00BAFC84 /* Services */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -75,6 +121,11 @@
 		683DF86A2F5EE42A008362EE = {
 			isa = PBXGroup;
 			children = (
+				688720B02F70480D00BAFC84 /* Services */,
+				688720A72F70480900BAFC84 /* Views */,
+				6887209E2F70480600BAFC84 /* Models */,
+				688720962F70480300BAFC84 /* Components */,
+				683DF89F2F5EEE22008362EE /* README.md */,
 				683DF8752F5EE42A008362EE /* UniPlan */,
 				683DF8852F5EE42B008362EE /* UniPlanTests */,
 				683DF88F2F5EE42B008362EE /* UniPlanUITests */,
@@ -109,6 +160,9 @@
 			);
 			fileSystemSynchronizedGroups = (
 				683DF8752F5EE42A008362EE /* UniPlan */,
+				6887209E2F70480600BAFC84 /* Models */,
+				688720A72F70480900BAFC84 /* Views */,
+				688720B02F70480D00BAFC84 /* Services */,
 			);
 			name = UniPlan;
 			packageProductDependencies = (
@@ -155,6 +209,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				683DF88F2F5EE42B008362EE /* UniPlanUITests */,
+				688720962F70480300BAFC84 /* Components */,
 			);
 			name = UniPlanUITests;
 			packageProductDependencies = (
@@ -236,6 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				683DF8A02F5EEE2A008362EE /* README.md in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,6 +451,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TY37BVMD22;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -426,6 +483,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TY37BVMD22;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

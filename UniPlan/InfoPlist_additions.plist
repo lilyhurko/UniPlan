@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- Add this key to your existing Info.plist -->
+	<key>NSUserNotificationUsageDescription</key>
+	<string>UniPlan używa powiadomień, aby przypominać Ci o nadchodzących zajęciach.</string>
+
+	<!-- Also recommended: -->
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+	</array>
+</dict>
+</plist>
