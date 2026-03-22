@@ -12,7 +12,7 @@ A native iOS app built with SwiftUI that provides a clean, fast and intuitive wa
   <img src="Screenshots/today.png" width="200"/>
   <img src="Screenshots/schedule.png" width="200"/>
   <img src="Screenshots/tasks.png" width="200"/>
-  <img src="Screenshots/exams.png" width="200"/>
+  <img src="Screenshots/search.png" width="200"/>
 </p>
 
 ---
