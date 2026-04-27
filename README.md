@@ -145,8 +145,6 @@ The app includes the official Politechnika Lubelska academic calendar for semest
 ## Author
 
 **Liliia Hurko**
-Politechnika Lubelska — Informatyka, I2S gr. 2/3
-Semestr letni 2025/2026
 
 ---
 
